@@ -4,14 +4,46 @@
 #include <QGridLayout>
 #include <QPushButton>
 #include <QLCDNumber>
+#include <QSignalMapper>
 
 CalculatorMainWindow::CalculatorMainWindow(QWidget *parent) :
     QWidget(parent)
 {
     resize(300,300);
     setWindowTitle("Simple calculator");
-
     createWidgets();
+
+    connect(pushButtonClear, SIGNAL(clicked()), this, SLOT(slotClear()), Qt::UniqueConnection);
+    connect(pushButtonPlus, SIGNAL(clicked()), this, SLOT(slotPlusEqual()), Qt::UniqueConnection);
+
+    mMapper = new QSignalMapper(this);
+
+    connect(pushButton0, SIGNAL(clicked()), mMapper, SLOT(map()), Qt::UniqueConnection);
+    connect(pushButton1, SIGNAL(clicked()), mMapper, SLOT(map()), Qt::UniqueConnection);
+    connect(pushButton2, SIGNAL(clicked()), mMapper, SLOT(map()), Qt::UniqueConnection);
+    connect(pushButton3, SIGNAL(clicked()), mMapper, SLOT(map()), Qt::UniqueConnection);
+    connect(pushButton4, SIGNAL(clicked()), mMapper, SLOT(map()), Qt::UniqueConnection);
+    connect(pushButton5, SIGNAL(clicked()), mMapper, SLOT(map()), Qt::UniqueConnection);
+    connect(pushButton6, SIGNAL(clicked()), mMapper, SLOT(map()), Qt::UniqueConnection);
+    connect(pushButton7, SIGNAL(clicked()), mMapper, SLOT(map()), Qt::UniqueConnection);
+    connect(pushButton8, SIGNAL(clicked()), mMapper, SLOT(map()), Qt::UniqueConnection);
+    connect(pushButton9, SIGNAL(clicked()), mMapper, SLOT(map()), Qt::UniqueConnection);
+
+    mMapper->setMapping(pushButton0, 0);
+    mMapper->setMapping(pushButton1, 1);
+    mMapper->setMapping(pushButton2, 2);
+    mMapper->setMapping(pushButton3, 3);
+    mMapper->setMapping(pushButton4, 4);
+    mMapper->setMapping(pushButton5, 5);
+    mMapper->setMapping(pushButton6, 6);
+    mMapper->setMapping(pushButton7, 7);
+    mMapper->setMapping(pushButton8, 8);
+    mMapper->setMapping(pushButton9, 9);
+
+   slotClear();
+
+   connect(mMapper, SIGNAL(mapped(int)), this, SLOT(slotButtonPressed(int)), Qt::UniqueConnection);
+
 
 }
 
@@ -69,6 +101,27 @@ void CalculatorMainWindow::createWidgets()
     pushButtonPlus->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
 
     lcdNumber->setFixedHeight(50);
+
+
+}
+
+void CalculatorMainWindow::slotClear()
+{
+    lcdNumber->display(0);
+    mSum = 0;
+    mNextNumber = 0;
+}
+void CalculatorMainWindow::slotButtonPressed(int num)
+{
+    lcdNumber->display(num);
+    mNextNumber = num;
+
+}
+void CalculatorMainWindow::slotPlusEqual()
+{
+    mSum += mNextNumber;
+    lcdNumber->display(mSum);
+
 
 
 }

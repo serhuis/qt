@@ -5,6 +5,7 @@
 
 class QPushButton;
 class QLCDNumber;
+class QSignalMapper;
 
 class CalculatorMainWindow : public QWidget
 {
@@ -31,8 +32,18 @@ private:
     QPushButton * pushButtonPlus;
     QPushButton * pushButtonMinus;
     QPushButton * pushButtonClear;
-
     QLCDNumber *lcdNumber;
+
+    int mSum;
+    int mNextNumber;
+
+    QSignalMapper *mMapper;
+
+private slots:
+    void slotClear();
+    void slotButtonPressed(int num);
+    void slotPlusEqual();
+
 
 
 };
