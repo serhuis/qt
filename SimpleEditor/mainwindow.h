@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QFile>
 
 namespace Ui {
 class MainWindow;
@@ -18,12 +19,18 @@ public:
 private:
     Ui::MainWindow *ui;
     void UpdateTitle();
+    bool askForFileSaveAndClose();
 
 
 private slots:
     void slotNewFile();
+    void slotOpenFile();
+    void slotSaveFale();
+    void slotAboutProgram();
+    void slotAboutQt();
 
 private:
+    QFile mFile;
     QString mFileName;
 };
 

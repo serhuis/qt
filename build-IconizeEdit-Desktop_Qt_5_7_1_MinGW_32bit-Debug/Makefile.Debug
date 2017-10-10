@@ -11,7 +11,7 @@ MAKEFILE      = Makefile.Debug
 
 CC            = gcc
 CXX           = g++
-DEFINES       = -DUNICODE -DQT_DEPRECATED_WARNINGS -DQT_QML_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_NEEDS_QMAIN
+DEFINES       = -DUNICODE -DQT_DEPRECATED_WARNINGS -DMAJOR_VERSION -D= -D1 -DMINOR_VERSION -D= -D0 -DQT_QML_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_NEEDS_QMAIN
 CFLAGS        = -pipe -fno-keep-inline-dllexport -g -Wall -Wextra $(DEFINES)
 CXXFLAGS      = -pipe -fno-keep-inline-dllexport -g -std=gnu++11 -frtti -Wall -Wextra -fexceptions -mthreads $(DEFINES)
 INCPATH       = -I..\IconizeEdit -I. -IC:\Qt\5.7\mingw53_32\include -IC:\Qt\5.7\mingw53_32\include\QtWidgets -IC:\Qt\5.7\mingw53_32\include\QtGui -IC:\Qt\5.7\mingw53_32\include\QtANGLE -IC:\Qt\5.7\mingw53_32\include\QtCore -Idebug -IC:\Qt\5.7\mingw53_32\mkspecs\win32-g++ 
@@ -305,6 +305,9 @@ debug/moc_iconizedlineedit.cpp: C:/Qt/5.7/mingw53_32/include/QtWidgets/QLineEdit
 		C:/Qt/5.7/mingw53_32/include/QtGui/qtextformat.h \
 		C:/Qt/5.7/mingw53_32/include/QtGui/qpen.h \
 		C:/Qt/5.7/mingw53_32/include/QtGui/qtextoption.h \
+		C:/Qt/5.7/mingw53_32/include/QtGui/QValidator \
+		C:/Qt/5.7/mingw53_32/include/QtGui/qvalidator.h \
+		C:/Qt/5.7/mingw53_32/include/QtCore/qregularexpression.h \
 		../IconizeEdit/iconizedlineedit.h \
 		C:/Qt/5.7/mingw53_32/bin/moc.exe
 	C:\Qt\5.7\mingw53_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.7/mingw53_32/mkspecs/win32-g++ -IG:/My_proj/qt/IconizeEdit -IC:/Qt/5.7/mingw53_32/include -IC:/Qt/5.7/mingw53_32/include/QtWidgets -IC:/Qt/5.7/mingw53_32/include/QtGui -IC:/Qt/5.7/mingw53_32/include/QtANGLE -IC:/Qt/5.7/mingw53_32/include/QtCore -I. -IC:/Qt/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include -IC:/Qt/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include-fixed -IC:/Qt/Tools/mingw530_32/i686-w64-mingw32/include -IC:/Qt/Tools/mingw530_32/i686-w64-mingw32/include/c++ -IC:/Qt/Tools/mingw530_32/i686-w64-mingw32/include/c++/i686-w64-mingw32 -IC:/Qt/Tools/mingw530_32/i686-w64-mingw32/include/c++/backward ..\IconizeEdit\iconizedlineedit.h -o debug\moc_iconizedlineedit.cpp
@@ -538,6 +541,9 @@ debug/iconizemainwindow.o: ../IconizeEdit/iconizemainwindow.cpp ../IconizeEdit/i
 		C:/Qt/5.7/mingw53_32/include/QtGui/qtextformat.h \
 		C:/Qt/5.7/mingw53_32/include/QtGui/qpen.h \
 		C:/Qt/5.7/mingw53_32/include/QtGui/qtextoption.h \
+		C:/Qt/5.7/mingw53_32/include/QtGui/QValidator \
+		C:/Qt/5.7/mingw53_32/include/QtGui/qvalidator.h \
+		C:/Qt/5.7/mingw53_32/include/QtCore/qregularexpression.h \
 		ui_iconizemainwindow.h \
 		C:/Qt/5.7/mingw53_32/include/QtCore/QVariant \
 		C:/Qt/5.7/mingw53_32/include/QtWidgets/QAction \
@@ -562,8 +568,6 @@ debug/iconizemainwindow.o: ../IconizeEdit/iconizemainwindow.cpp ../IconizeEdit/i
 		C:/Qt/5.7/mingw53_32/include/QtWidgets/qabstractitemdelegate.h \
 		C:/Qt/5.7/mingw53_32/include/QtWidgets/qstyleoption.h \
 		C:/Qt/5.7/mingw53_32/include/QtWidgets/qabstractspinbox.h \
-		C:/Qt/5.7/mingw53_32/include/QtGui/qvalidator.h \
-		C:/Qt/5.7/mingw53_32/include/QtCore/qregularexpression.h \
 		C:/Qt/5.7/mingw53_32/include/QtWidgets/qslider.h \
 		C:/Qt/5.7/mingw53_32/include/QtWidgets/qabstractslider.h \
 		C:/Qt/5.7/mingw53_32/include/QtWidgets/qstyle.h \
@@ -681,6 +685,9 @@ debug/iconizedlineedit.o: ../IconizeEdit/iconizedlineedit.cpp ../IconizeEdit/ico
 		C:/Qt/5.7/mingw53_32/include/QtGui/qtextformat.h \
 		C:/Qt/5.7/mingw53_32/include/QtGui/qpen.h \
 		C:/Qt/5.7/mingw53_32/include/QtGui/qtextoption.h \
+		C:/Qt/5.7/mingw53_32/include/QtGui/QValidator \
+		C:/Qt/5.7/mingw53_32/include/QtGui/qvalidator.h \
+		C:/Qt/5.7/mingw53_32/include/QtCore/qregularexpression.h \
 		C:/Qt/5.7/mingw53_32/include/QtWidgets/QStyle \
 		C:/Qt/5.7/mingw53_32/include/QtWidgets/qstyle.h \
 		C:/Qt/5.7/mingw53_32/include/QtGui/qicon.h \
