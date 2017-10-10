@@ -38,8 +38,8 @@ public:
     QAction *action_Copy;
     QAction *action_Paste;
     QAction *actionSelect_all;
+    QAction *actionAbout_program;
     QAction *actionAbout_Qt;
-    QAction *actionAbout_Qt_2;
     QWidget *centralWidget;
     QVBoxLayout *verticalLayout;
     QPlainTextEdit *plainTextEdit;
@@ -80,10 +80,10 @@ public:
         action_Paste->setObjectName(QStringLiteral("action_Paste"));
         actionSelect_all = new QAction(MainWindow);
         actionSelect_all->setObjectName(QStringLiteral("actionSelect_all"));
+        actionAbout_program = new QAction(MainWindow);
+        actionAbout_program->setObjectName(QStringLiteral("actionAbout_program"));
         actionAbout_Qt = new QAction(MainWindow);
         actionAbout_Qt->setObjectName(QStringLiteral("actionAbout_Qt"));
-        actionAbout_Qt_2 = new QAction(MainWindow);
-        actionAbout_Qt_2->setObjectName(QStringLiteral("actionAbout_Qt_2"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         verticalLayout = new QVBoxLayout(centralWidget);
@@ -129,8 +129,8 @@ public:
         menu_Edit->addAction(action_Paste);
         menu_Edit->addSeparator();
         menu_Edit->addAction(actionSelect_all);
+        menu_About_program->addAction(actionAbout_program);
         menu_About_program->addAction(actionAbout_Qt);
-        menu_About_program->addAction(actionAbout_Qt_2);
 
         retranslateUi(MainWindow);
         QObject::connect(actionE_xit, SIGNAL(triggered()), MainWindow, SLOT(close()));
@@ -170,12 +170,12 @@ public:
         action_Paste->setShortcut(QApplication::translate("MainWindow", "Ctrl+V", Q_NULLPTR));
         actionSelect_all->setText(QApplication::translate("MainWindow", "Select &all", Q_NULLPTR));
         actionSelect_all->setShortcut(QApplication::translate("MainWindow", "Ctrl+A", Q_NULLPTR));
-        actionAbout_Qt->setText(QApplication::translate("MainWindow", "About program", Q_NULLPTR));
-        actionAbout_Qt->setShortcut(QApplication::translate("MainWindow", "Ctrl+F1", Q_NULLPTR));
-        actionAbout_Qt_2->setText(QApplication::translate("MainWindow", "About&Qt", Q_NULLPTR));
+        actionAbout_program->setText(QApplication::translate("MainWindow", "About program", Q_NULLPTR));
+        actionAbout_program->setShortcut(QApplication::translate("MainWindow", "Ctrl+F1", Q_NULLPTR));
+        actionAbout_Qt->setText(QApplication::translate("MainWindow", "About&Qt", Q_NULLPTR));
         menu_File->setTitle(QApplication::translate("MainWindow", "&File", Q_NULLPTR));
         menu_Edit->setTitle(QApplication::translate("MainWindow", "&Edit", Q_NULLPTR));
-        menu_About_program->setTitle(QApplication::translate("MainWindow", "&About", Q_NULLPTR));
+        menu_About_program->setTitle(QApplication::translate("MainWindow", "&Help", Q_NULLPTR));
     } // retranslateUi
 
 };
